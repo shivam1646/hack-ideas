@@ -1,0 +1,60 @@
+[{
+  "id": 1,
+  "emp_id": "HI-JD101",
+  "name": "John Doe",
+  "email": "johndoe@gmail.com"
+},
+{
+  "id": 2,
+  "emp_id": "HI-FN102",
+  "name": "Fred Nerks",
+  "email": "frednerks@gmail.com"
+},
+{
+  "id": 3,
+  "emp_id": "HI-JB103",
+  "name": "Joe Blogs",
+  "email": "joeblogs@gmail.com"
+},
+{
+  "id": 4,
+  "emp_id": "HI-ES104",
+  "name": "Eric Simons",
+  "email": "ericsimons@gmail.com"
+},
+{
+  "id": 5,
+  "emp_id": "HI-JP105",
+  "name": "Jackson Pot",
+  "email": "jacksonpot@gmail.com"
+},
+{
+  "id": 6,
+  "emp_id": "HI-JC106",
+  "name": "Justin Case",
+  "email": "justincase@gmail.com"
+},
+{
+  "id": 7,
+  "emp_id": "HI-SS107",
+  "name": "Samuel Shei",
+  "email": "samuelshei@gmail.com"
+},
+{
+  "id": 8,
+  "emp_id": "HI-EB108",
+  "name": "Emily Berry",
+  "email": "emilyberry@gmail.com"
+},
+{
+  "id": 9,
+  "emp_id": "HI-DK109",
+  "name": "Dennis Kain",
+  "email": "denniskain@gmail.com"
+},
+{
+  "id": 10,
+  "emp_id": "HI-KD110",
+  "name": "Ken Doyle",
+  "email": "kendoyle@gmail.com"
+}]
