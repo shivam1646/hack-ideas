@@ -1,0 +1,9 @@
+.v-sheet.v-app-bar.v-toolbar:not(.v-sheet--outlined) {
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.v-application .title {
+  color: $brand-color;
+  font-weight: bolder;
+  font-size: 1.5rem !important;
+}
