@@ -10,7 +10,7 @@ import {
   LOGGED_IN_USER
 } from '../../../mock-data';
 
-describe('global store', () => {
+describe('idea store', () => {
   let store;
 
   beforeEach(() => {

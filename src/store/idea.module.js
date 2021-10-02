@@ -14,8 +14,7 @@ export const mutations = {
 
 export const actions = {
   add({ state, rootState, commit }) {
-    const idea = createIdea(state, rootState);
-    commit('setIdeas', addToStorage('ideas', idea), { root: true });
+    commit('setIdeas', addToStorage('ideas', createIdea(state, rootState)), { root: true });
     commit('resetIdea');
   }
 }
