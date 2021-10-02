@@ -18,8 +18,10 @@ const getWrapper = (login) => {
   });
 };
 
+const getEmployeeIdField = wrapper => wrapper.find('v-text-field-stub');
+
 const triggerClick = async (wrapper, value) => {
-  const employeeIdField = wrapper.find('v-text-field-stub');
+  const employeeIdField = getEmployeeIdField(wrapper);
   employeeIdField.element.value = value;
   employeeIdField.trigger('input');
 
@@ -42,7 +44,7 @@ describe('login', () => {
   });
 
   it('should have an employee id field and button in disabled state', () => {
-    expect(wrapper.find('v-text-field-stub').props().label).toBe('Employee id');
+    expect(getEmployeeIdField(wrapper).props().label).toBe('Employee id');
     expect(wrapper.find('v-btn-stub').props().disabled).toBe(true);
   });
 
