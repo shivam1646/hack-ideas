@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="wrapper">
     <toolbar />
     <idea-preview
       v-for="idea in sortedIdeas"
@@ -48,5 +48,8 @@ export default {
 <style lang="scss" scoped>
 .count {
   color: $secondary-text-color;
+}
+.wrapper {
+  width: 100%;
 }
 </style>
