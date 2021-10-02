@@ -1,5 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import store from '../store/index';
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,9 @@ router.beforeEach((to, from, next) => {
   if (to.name !== "login" && !user) {
     next({ name: 'login'});
   } else {
+    if (!store.state.loggedInUser) {
+      store.commit('setLoggedInUser', JSON.parse(user));
+    }
     next();
   }
 });
