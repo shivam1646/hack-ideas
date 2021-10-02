@@ -19,3 +19,5 @@ export const IDEA_TITLE = 'JS Hackathon';
 export const IDEA_DESCR = 'Apply your JS skills';
 
 export const TAG_IDS = [1, 2];
+
+export const LOGGED_IN_USER = { emp_id: EMPLOYEE_ID };
