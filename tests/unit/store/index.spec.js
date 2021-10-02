@@ -1,6 +1,6 @@
 import { mutations, actions } from "@/store/index.js";
 import { storeMock } from "../../test-utils";
-import { INITIAL_STATE, EMPLOYEE_ID, INVALID_EMPLOYEE_ID } from '../../../mock-data';
+import { INITIAL_STATE, EMPLOYEE_ID, INVALID_EMPLOYEE_ID, IDEAS } from '../../../mock-data';
 
 describe('global store', () => {
   let store;
@@ -46,15 +46,23 @@ describe('global store', () => {
 
   describe('mutations', () => {
     describe('setEmployeeId', () => {
-
       it ('should set employeeId', async () => {
         await store.commit('setEmployeeId', INVALID_EMPLOYEE_ID);
         expect(store.state.employeeId).toBe(INVALID_EMPLOYEE_ID);
       });
-      
-      it ('should set setLoggedInUser', async () => {
+    });
+
+    describe('setLoggedInUser', () => {
+      it ('should set loggedInUser', async () => {
         await store.commit('setLoggedInUser', { emp_id: EMPLOYEE_ID });
         expect(store.state.loggedInUser.emp_id).toBe(EMPLOYEE_ID);
+      });
+    });
+
+    describe('setIdeas', () => {
+      it ('should set ideas', async () => {
+        await store.commit('setIdeas', IDEAS);
+        expect(store.state.ideas).toEqual(IDEAS);
       });
     })
   });
