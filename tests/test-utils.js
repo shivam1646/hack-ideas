@@ -23,7 +23,7 @@ export const vuetifyMock = () =>
     mocks: {
       $vuetify: {
         breakpoint: {
-          lg: true
+          mdAndUp: true
         }
       }
     }
