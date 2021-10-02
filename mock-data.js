@@ -21,3 +21,9 @@ export const IDEA_DESCR = 'Apply your JS skills';
 export const TAG_IDS = [1, 2];
 
 export const LOGGED_IN_USER = { emp_id: EMPLOYEE_ID };
+
+export const IDEAS = [{
+  title: IDEA_TITLE,
+  description: IDEA_DESCR,
+  tags: TAG_IDS
+}];
