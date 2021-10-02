@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import idea from "./idea.module";
 import users from '../../users.json';
 import { INITIAL_STATE } from '../../mock-data';
 
@@ -14,8 +15,8 @@ export const mutations = {
   setLoggedInUser(state, loggedInUser) {
     state.loggedInUser = loggedInUser;
   },
-  clear(state) {
-    state = {};
+  setIdeas(state, ideas) {
+    state.ideas = ideas;
   }
 };
 
@@ -33,5 +34,8 @@ export const actions = {
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
+  modules: {
+    idea
+  }
 });
