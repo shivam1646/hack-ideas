@@ -1,6 +1,6 @@
 <template>
   <v-row justify="center">
-    <v-col :cols="$vuetify.breakpoint.lg ? 6 : 12">
+    <v-col :cols="$vuetify.breakpoint.mdAndUp ? 6 : 12">
       <v-card flat>
         <v-card-title v-text="'Idea'" />
         <v-card-text>
