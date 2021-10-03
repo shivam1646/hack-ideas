@@ -1,6 +1,5 @@
 import { v4 as uuid } from 'uuid';
 
-
 export const createIdea = (state, rootState) => {
   const { title, description, tags } = state;
   const { loggedInUser: { emp_id: createdBy } } = rootState;

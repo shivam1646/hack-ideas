@@ -7,3 +7,11 @@
   font-weight: bolder;
   font-size: 1.5rem !important;
 }
+
+.v-btn {
+  text-transform: none;
+}
+
+.v-btn > .v-btn__content .v-icon, .theme--light.v-icon {
+  color: $brand-color;
+}

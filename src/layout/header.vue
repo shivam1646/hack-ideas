@@ -10,9 +10,8 @@
     <v-spacer />
     <div v-if="loggedInUser">
       <span
-        v-if="$vuetify.breakpoint.mdAndUp"
         v-text="`Hello, ${loggedInUser.name}`"
-        class="mr-6 user-text"
+        class="mr-6 user-text primary-text hidden-sm-and-down"
       />
       <router-link :to="{ path: 'idea/add' }">
         <v-icon large>mdi-plus-thick</v-icon>
@@ -46,6 +45,7 @@ export default {
 
   methods: {
     ...mapActions(['logout']),
+
     onLogout() {
       try {
         this.logout();
@@ -59,11 +59,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-bar .v-icon {
-  color: $brand-color;
-}
 .user-text {
-  color: $brand-color;
   font-size: 1.2rem;
   font-weight: bold;
 }

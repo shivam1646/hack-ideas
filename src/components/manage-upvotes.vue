@@ -48,6 +48,7 @@ export default {
   computed: {
     ...mapState('upvote', ['upvotes']),
     ...mapState(['loggedInUser']),
+
     totalUpvotes() {
       return this.upvotes.filter(uv => uv.ideaId === this.ideaId).length
     }
@@ -55,6 +56,7 @@ export default {
 
   methods: {
     ...mapActions('upvote', ['upvote', 'remove', 'getUpvotes']),
+
     isUpvotedByCurrentUser() {
       return this.upvotes.some(uv => {
          return uv.ideaId === this.ideaId
@@ -65,9 +67,3 @@ export default {
 
 }
 </script>
-
-<style lang="scss" scoped>
-.v-btn .v-icon {
-  color: $brand-color;
-}
-</style>

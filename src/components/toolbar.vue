@@ -3,7 +3,10 @@
     class="d-flex justify-space-between align-center my-10"
     :class="$vuetify.breakpoint.mdAndUp ? 'flex-row' : 'flex-column'"
   >
-    <span class="count" v-text="`${ideasCount} ideas found.`" />
+    <span
+      class="count"
+      v-text="`${ideasCount} ideas found.`"
+    />
     <div>
     <v-tabs
       v-if="ideasCount"
@@ -43,6 +46,7 @@ export default {
 
   methods: {
     ...mapMutations(['setSortByField']),
+
     onTabChange(index) {
       this.setSortByField(this.TABS[index].value);
     }

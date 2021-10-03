@@ -9,6 +9,7 @@ export default new Vuetify({
       light: {
         brand: '#f58024',
         action: '#10AC84',
+        brandSecondary: '#1b2330'
       }
     }
   }
