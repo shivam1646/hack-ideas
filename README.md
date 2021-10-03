@@ -27,3 +27,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+### Build docker image
+docker build -t shivam/hack-ideas .
+
+### Create and start docker container and go to port 8080 on local machine
+docker run -it -p 8080:8080 -d --name hack-ideas shivam/hack-ideas
