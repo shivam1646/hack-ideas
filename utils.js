@@ -25,7 +25,7 @@ export const createUpvote = (rootState, ideaId) => {
 
 export const addToStorage = (item, itemToAdd) => {
   const list = [...getStorage(item), itemToAdd];
-  return updateStorage(item, list);
+  return _updateStorage(item, list);
 }
 
 export const getStorage = item => {
@@ -44,12 +44,30 @@ export const removeUpvoteFromStorage = (item, id, rootState) => {
     }
     return false;
   });
-  return updateStorage(item, list);
+  return _updateStorage(item, list);
 }
 
-export const getVotesCount = (idea, upvotes) => upvotes.filter(uv => uv.ideaId === idea.id).length
+export const sortBy = (upvotesState) => {
+  const createdAt =  _sortByCreatedAt;
+  const upvotes = _sortByUpvotes(upvotesState);
 
-const updateStorage = (item, list) => {
+  return {
+    createdAt,
+    upvotes
+  }
+};
+
+const _sortByCreatedAt = (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime();
+
+const _sortByUpvotes = (upvotes) => {
+  return function(a, b) {
+    return _getVotesCount(b, upvotes) - _getVotesCount(a, upvotes);
+  }
+}
+
+const _getVotesCount = (idea, upvotes) => upvotes.filter(uv => uv.ideaId === idea.id).length
+
+const _updateStorage = (item, list) => {
   localStorage.setItem(item, JSON.stringify(list));
   return list;
 }
