@@ -25,10 +25,19 @@
       class="text-left pl-2"
     >
       <h3 v-text="idea.title" />
-      <span class="description" v-text="idea.description" />
+      <span
+        class="description secondary-text"
+        v-text="idea.description"
+      />
     </v-col>
-    <v-divider v-if="isMdAndUp()" vertical class="my-3" />
-    <v-col v-if="isMdAndUp()" :cols="4">
+    <v-divider
+      vertical
+      class="my-3 hidden-sm-and-down"
+    />
+    <v-col
+      class="hidden-sm-and-down"
+      :cols="4"
+    >
       <!-- meta section -->
       <idea-meta :createdAt="idea.createdAt" :tags="idea.tags" />
     </v-col>
@@ -72,7 +81,6 @@ export default {
 }
 
 .description {
-  color: $secondary-text-color;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;  
