@@ -42,8 +42,9 @@ export const actions = {
     commit('setLoggedInUser', user);
   },
   logout({ commit }) {
-    sessionStorage.removeItem('user')
-    commit('setLoggedInUser', null)
+    sessionStorage.removeItem('user');
+    commit('setLoggedInUser', null);
+    commit('setEmployeeId', '');
   }
 };
 

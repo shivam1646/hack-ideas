@@ -1,15 +1,16 @@
 import { shallowMount } from "@vue/test-utils";
 import { routerMock, vuetifyMock, storeMock } from "../test-utils";
 import ManageUpvotes from "@/components/manage-upvotes.vue";
-import { LOGGED_IN_USER, UPVOTES } from '../../mock-data';
+import { LOGGED_IN_USER, UPVOTES, EMPLOYEE_ID } from '../../mock-data';
 
 const remove = jest.fn();
 const upvote = jest.fn();
 
-const getWrapper = (ideaId = '1') => {
+const getWrapper = (ideaId = '1', createdBy = 'HI-JP105') => {
   return shallowMount(ManageUpvotes, {
     propsData: {
       ideaId,
+      createdBy
     },
     ...storeMock({
       state: {
@@ -75,5 +76,15 @@ describe('manage upvotes', () => {
       await wrapper.find('v-btn-stub').vm.$emit('click');
       expect(upvote).toBeCalledTimes(1);
     });
+
+    describe('when user tries to upvote his own idea', () => {
+      beforeEach(() => {
+        wrapper = getWrapper('2', EMPLOYEE_ID);
+      });
+
+      it('upvote button should be disabled', () => {
+        expect(wrapper.find('v-btn-stub').props().disabled).toBe(true);
+      });
+    })
   });
 });

@@ -44,7 +44,7 @@
     <v-divider class="mx-3" />
     <!-- upvotes section -->
     <v-col cols="12">
-      <manage-upvotes :ideaId="idea.id" />
+      <manage-upvotes :ideaId="idea.id" :createdBy="idea.createdBy" />
     </v-col>
   </v-row>
 </template>

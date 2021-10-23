@@ -17,6 +17,7 @@
       text
       v-else
       @click="upvote(ideaId)"
+      :disabled="isUpvotingDisabled()"
     >
       <span>
         <v-icon class="pa-3">mdi-thumb-up-outline</v-icon>Upvote
@@ -36,6 +37,10 @@ export default {
 
   props: {
     ideaId: {
+      type: String,
+      required: true
+    },
+    createdBy: {
       type: String,
       required: true
     }
@@ -62,6 +67,10 @@ export default {
          return uv.ideaId === this.ideaId
           && uv.userId === this.loggedInUser?.emp_id
       });
+    },
+
+    isUpvotingDisabled() {
+      return this.loggedInUser?.emp_id === this.createdBy;
     }
   }
 

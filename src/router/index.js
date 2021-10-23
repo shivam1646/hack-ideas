@@ -30,6 +30,8 @@ router.beforeEach((to, from, next) => {
   const user = sessionStorage.getItem('user');
   if (to.name !== "login" && !user) {
     next({ name: 'login'});
+  } else if (to.name === "login" && user) {
+    next({ name: 'home' });
   } else {
     if (!store.state.loggedInUser) {
       store.commit('setLoggedInUser', JSON.parse(user));

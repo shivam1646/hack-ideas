@@ -33,12 +33,14 @@ export const IDEAS = [{
   id: '1',
   title: IDEA_TITLE,
   description: IDEA_DESCR,
-  tags: TAG_IDS
+  tags: TAG_IDS,
+  createdBy: EMPLOYEE_ID
 }, {
   id: '2',
   title: 'Idea 2',
   description: 'description 2',
-  tags: [2, 4]
+  tags: [2, 4],
+  createdBy: EMPLOYEE_ID
 }];
 
 export const UPVOTES = [{
